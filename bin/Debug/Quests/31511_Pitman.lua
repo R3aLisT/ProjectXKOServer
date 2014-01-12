@@ -2,7 +2,7 @@ local Ret = 0;
 local NPC = 31511;
 
 if EVENT == 100 then
-   SelectMsg(UID, 3, -1, 1186, NPC, 2017, 150, 2018, 200, 2019, 160, 2020, 240, 27, 241);
+   SelectMsg(UID, 3, -1, 1186, NPC, 2017, 150, 2018, 200, 2019, 160, 2020, 240);
 end
 
 local ITEMA = 0;
@@ -42,9 +42,5 @@ if EVENT == 200 then
 end
 
 if EVENT == 240 then
-   SelectMsg(UID, 2, -1, 848, NPC, 7253, 241, 7254, 242);
-end
-
-if EVENT == 241 then
-   Ret = 1;
+   SelectMsg(UID, 2, -1, 848, NPC, 7253, -1, 7254, -1); -- Fonksiyonda eksiklikler var.
 end

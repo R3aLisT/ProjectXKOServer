@@ -17,10 +17,10 @@ end
 if EVENT == 201 then
    MONEY = HowmuchItem(UID, 900000000);
    if MONEY >= 50000 then
-   SelectMsg(UID, 3, -1, 9206, NPC, 7091, 666, 7092, 667, 7093, 668, 7094, 101, 7095, 102, 7096, 103, 7097, 104);
+   SelectMsg(UID, 3, -1, 9206, NPC, 7091, 666, 7092, 667, 7093, 668);
    else
    NpcMsg(UID, 9136);
-   end	
+   end        
 end
 
 if EVENT == 666 then

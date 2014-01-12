@@ -484,6 +484,7 @@ void CNpc::PVPMonumentProcess(CUser *pUser)
 
 		g_pMain->m_nPVPMonumentNation[GetZoneID()] = pUser->GetNation();
 		g_pMain->NpcUpdate(m_sSid, m_bMonster, pUser->GetNation(), pUser->GetNation() == KARUS ? MONUMENT_KARUS_SPID : MONUMENT_ELMORAD_SPID);
+		pUser->GiveItem(RED_TREASURE_CHEST,1,true);
 	}
 }
 

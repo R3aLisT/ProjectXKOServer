@@ -2,12 +2,39 @@ local NPC = 29056;
 local NATION = 0;
 
 if EVENT == 100 then
-   SelectMsg(UID, 3, -1, 9427, NPC, 7679, 542, 7242, 547);
+   SelectMsg(UID, 3, -1, 9427, NPC, 7140, 201, 7141, 200, 7679, 202, 7214, 547, 9012, 204);
 end
 
-local ITEMDRGN = 0;
 
-if EVENT == 542 then
+if EVENT == 200 then
+    -- Ancient Text butonu bu.
+  SelectMsg(UID, 3, -1, 9427, NPC, 7119, 601, 7120, 604);
+ end
+ 
+ if EVENT == 201 then
+    -- [Exchange] Map of Chaos Exchange Coupon butonu bu.
+   SelectMsg(UID, 3, -1, 9427, NPC, 7116, 600);
+ end
+ 
+  if EVENT == 202 then
+    -- [Exchange] Dragon Wing's butonu bu.
+   SelectMsg(UID, 3, -1, 9427, NPC, 9010, 542);
+ end
+ 
+   if EVENT == 203 then
+    -- [Exchange] Pathos Glove Package butonu bu.
+   SelectMsg(UID, 3, -1, 9427, NPC, 9011, -1);
+ end
+ 
+    if EVENT == 204 then
+    -- [Exchange] itemlerin hepsi burda.
+   SelectMsg(UID, 3, -1, 9427, NPC, 9013, 700, 9014, 702);
+ end
+ 
+ 
+ -- Dragon Wing start.
+ 
+ if EVENT == 542 then
    ITEMDRGN = HowmuchItem(UID, 810164000);
    if ITEMDRGN > 0 then
    SelectMsg(UID, 3, -1, 10592, NPC, 7680, 543, 7681, 544, 7682, 545, 7683, 546);
@@ -60,8 +87,12 @@ if EVENT == 546 then
    end
 end
 
+-- Dragon Wing's end
+
 local ITEMYENIA = 0;
 local ITEMYENIH = 0;
+
+-- Minevra package start.
 
 if EVENT == 547 then
    SelectMsg(UID, 2, -1, 9938, NPC, 7244, 548, 7243, 549);
@@ -75,6 +106,7 @@ if EVENT == 548 then
    SelectMsg(UID, 2, -1, 9942, NPC, 27);
    end
 end
+
 
 if EVENT == 550 then
    RobItem(UID, 508117000, 1)
@@ -124,3 +156,110 @@ if EVENT == 557 then
    RobItem(UID, 508116000, 1)
    GiveItem(UID, 518003639, 1)
 end
+
+-- Minevra end.
+
+local ITEMYENIC = 0;
+local ITEMYENID = 0;
+
+-- Map of Chaos start
+
+if EVENT == 600 then
+   ITEMYENIC = HowmuchItem(UID, 810150000);
+   if ITEMYENIC > 0 then
+   SelectMsg(UID, 3, -1, 9941, NPC, 10, 599);
+   else
+   SelectMsg(UID, 2, -1, 3337, NPC, 27);
+   end
+end
+
+if EVENT == 599 then
+   RobItem(UID, 810150000, 1)
+   GiveItem(UID, 910246000, 1)
+end
+
+-- Map of Chaos end.
+
+local ITEMLAZA = 0;
+local ITEMLAZB = 0;
+
+-- Ancient Text Reward start.
+
+if EVENT == 601 then
+   ITEMLAZA = HowmuchItem(UID, 810160000);
+   if ITEMLAZA > 0 then
+   SelectMsg(UID, 3, -1, 9941, NPC, 10, 602);
+   else
+   SelectMsg(UID, 2, -1, 9269, NPC, 27);
+   end
+end
+
+if EVENT == 602 then
+   RobItem(UID, 810160000, 1)
+   GiveItem(UID, 900053000, 1) -- Ancient Text Ne Verdiği Bilinmediği için şimdilik Wing Of Hero Certificate eklendi.
+end
+
+-- Ancient Text Reward end.
+
+local ITEMLAZA = 0;
+local ITEMLAZB = 0;
+
+-- Ancient Text Noah start.
+
+if EVENT == 604 then
+   ITEMLAZA = HowmuchItem(UID, 810160000);
+   if ITEMLAZA > 0 then
+   SelectMsg(UID, 3, -1, 9941, NPC, 10, 603);
+   else
+   SelectMsg(UID, 2, -1, 9269, NPC, 27);
+   end
+end
+
+if EVENT == 603 then
+   GoldLose(UID, 100000000)
+   GiveItem(UID, 900053000, 1)
+end
+
+-- Ancient Text Noah end.
+
+local ITEMLAZC= 0;
+local ITEMLAZD = 0;
+
+-- Golden Mattock start.
+
+if EVENT == 700 then
+   ITEMLAZC = HowmuchItem(UID, 508122000);
+   if ITEMLAZC > 0 then
+   SelectMsg(UID, 3, -1, 9941, NPC, 10, 603);
+   else
+   SelectMsg(UID, 2, -1, 3338, NPC, 27);
+   end
+end
+
+if EVENT == 701 then
+   RobItem(UID, 508122000, 1)
+   GiveItem(UID, 389135000, 1)
+end
+
+-- Golden Mattock end.
+
+local ITEMLAZE= 0;
+local ITEMLAZF = 0;
+
+-- Golden Fishing Voucher start.
+
+if EVENT == 702 then
+   ITEMLAZE = HowmuchItem(UID, 508121000);
+   if ITEMLAZE > 0 then
+   SelectMsg(UID, 3, -1, 9941, NPC, 10, 703);
+   else
+   SelectMsg(UID, 2, -1, 9945, NPC, 27);
+   end
+end
+
+if EVENT == 703 then
+   RobItem(UID, 508121000, 1)
+   GiveItem(UID, 191347000, 1)
+end
+
+-- Golden Fishing Voucher end.

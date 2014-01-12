@@ -9,3 +9,4 @@ Knight Online Server
   - Eridia / Source Code [ Skype : ceridia ]
   - bodom61 / LUA Scripts [ Skype : extasyspike ]
   - katanatr / Database [ Skype : thyratr ]
+  - X-Laz / Random [ Skype : X-Laz34 ]

@@ -103,15 +103,15 @@ bool CGameSocket::HandlePacket(Packet & pkt)
 void CGameSocket::RecvServerConnect(Packet & pkt)
 {
 	uint8 byReconnect = pkt.read<uint8>();
-	printf("Game Server connected - %s\n", GetRemoteIP().c_str());
+	printf("Game Server connected - [%s]\n", GetRemoteIP().c_str());
 
 	Packet result(AI_SERVER_CONNECT, byReconnect);
 	Send(&result);
 
 	if (byReconnect == 1)
-		TRACE("**** ReConnect - server=%s,  socket = %d ****\n ", GetRemoteIP().c_str(), GetSocketID());
+		TRACE("**** ReConnect - server=[%s],  socket = [%d] ****\n ", GetRemoteIP().c_str(), GetSocketID());
 	else
-		TRACE("**** Connect - server=%s,  socket = %d ****\n ", GetRemoteIP().c_str(), GetSocketID());
+		TRACE("**** Connect - server=[%s],  socket = [%d] ****\n ", GetRemoteIP().c_str(), GetSocketID());
 
 	g_pMain->m_bFirstServerFlag = true;
 	g_pMain->AllNpcInfo();
@@ -260,7 +260,7 @@ bool CGameSocket::SetUid(float x, float z, int id, int speed)
 	CUser* pUser = g_pMain->GetUserPtr(id);
 	if(pUser == nullptr) 
 	{
-		TRACE("#### Userµî·Ï ½ÇÆĞ sid = %d ####\n", id);
+		TRACE("#### UserÂµÃ®Â·Ã Â½Ã‡Ã†Ã sid = %d ####\n", id);
 		return false;
 	}
 

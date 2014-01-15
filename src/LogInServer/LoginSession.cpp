@@ -116,7 +116,7 @@ void LoginSession::HandleLogin(Packet & pkt)
 		break;
 	}
 
-	printf(string_format("[ LOGIN - %d:%d:%d ] ID=%s, PW=%s, Authentication=%s\n",time.GetHour(),time.GetMinute(),time.GetSecond(),account.c_str(),password.c_str(),sAuthMessage.c_str()).c_str());
+	printf(string_format("[Date - %d:%d:%d] Account ID:%s Authentication=%s\n",time.GetHour(),time.GetMinute(),time.GetSecond(),account.c_str(),sAuthMessage.c_str()).c_str());
 
 	result << uint8(resultCode);
 	if (resultCode == AUTH_SUCCESS)
